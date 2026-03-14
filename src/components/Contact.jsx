@@ -86,11 +86,8 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="section-header text-accent-blue">
-            {'<'} comms {'/>'} 
-          </span>
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
-            Open a Channel
+            Contact
           </h2>
           <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
             Ready for a new build? Send a message and I will reply quickly.

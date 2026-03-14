@@ -400,3 +400,40 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    letter-spacing: 0.05em;
+  }
+
+  .game-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+  }
+
+  .menu-item {
+    padding: 0.75rem 1rem;
+    letter-spacing: 0.14em;
+  }
+
+  .menu-item:hover {
+    transform: translateX(4px);
+  }
+
+  .menu-item::before {
+    left: 0.4rem;
+  }
+
+  .menu-item .menu-index {
+    font-size: 0.6rem;
+  }
+
+  .bg-city-map {
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 90px 90px, 90px 90px, 18px 18px, 18px 18px;
+  }
+
+  .game-grid {
+    background-size: 70px 70px;
+  }
+}

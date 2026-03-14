@@ -117,6 +117,13 @@ const CommandPalette = ({ theme, setTheme }) => {
       perform: () => window.open('/CV_EN.pdf', '_blank'),
     },
     {
+      id: 'cv-es',
+      name: 'Open CV (ES)',
+      icon: <FileText size={14} />,
+      keyword: 'cv resume spanish espanol pdf',
+      perform: () => window.open('/CV_ES.pdf', '_blank'),
+    },
+    {
       id: 'copy-email',
       name: 'Copy Email Address',
       icon: <Copy size={14} />,
