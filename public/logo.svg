@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Thiago logo">
+  <rect width="128" height="128" rx="20" fill="#0b0e14" />
+  <rect x="10" y="10" width="108" height="108" rx="16" fill="#121826" stroke="#2a3b55" stroke-width="2" />
+  <path d="M34 40h60v10H69v42H59V50H34z" fill="#e2e8f0" />
+  <path d="M78 50h12v42H78z" fill="#38bdf8" />
+  <rect x="24" y="94" width="80" height="2" fill="#2a3b55" />
+</svg>
