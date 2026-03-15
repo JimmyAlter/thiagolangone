@@ -90,7 +90,7 @@ const Contact = () => {
             Contact
           </h2>
           <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            Ready for a new build? Send a message and I will reply quickly.
+            Have a role or project in mind? Send a message and I will get back to you.
           </p>
         </motion.div>
 
@@ -104,8 +104,8 @@ const Contact = () => {
             className="terminal-window menu-panel"
           >
             <div className="flex items-center justify-between px-6 pt-6">
-              <span className="hud-chip">transmission</span>
-              <span className="text-xs font-mono text-txt-muted uppercase tracking-[0.3em]">secure channel</span>
+              <span className="hud-chip">message</span>
+              <span className="text-xs font-mono text-txt-muted uppercase tracking-[0.3em]">email draft</span>
             </div>
 
             <form className="p-6 space-y-5" onSubmit={handleSubmit}>

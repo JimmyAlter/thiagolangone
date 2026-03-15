@@ -93,10 +93,10 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
-            Skills
+            Stack
           </h2>
           <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            The stack I rely on for shipping production-ready systems.
+            The tools I use to ship reliable, production-ready systems.
           </p>
         </motion.div>
 

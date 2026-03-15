@@ -60,6 +60,11 @@ export const projects = [
   {
     title: 'SystemMonitor (RMM Control)',
     description: 'Remote monitoring and management dashboard that centralizes inventory, health metrics, remote commands, and reports. Built with a React + Vite UI, Node/Express API, PostgreSQL storage, and PowerShell/Bash agents for Windows and Linux.',
+    highlights: [
+      'Centralized device inventory and health signals',
+      'Remote commands via Windows/Linux agents',
+      'Reports and history for ops visibility',
+    ],
     image: '/projects/systemmonitor-1.png',
     repoUrl: 'https://github.com/JimmyAlter/remote-monitoring-dashboard',
     liveUrl: '',
@@ -70,6 +75,11 @@ export const projects = [
   {
     title: 'AssetDesk',
     description: 'Enterprise service desk and asset inventory platform with ticket workflows, device health, and team coverage. Designed for IT operations with a clean UI and secure API.',
+    highlights: [
+      'Ticket workflows with assignment and status tracking',
+      'Asset inventory with device details and health',
+      'Secure API with JWT authentication',
+    ],
     image: '/projects/assetdesk-1.png',
     repoUrl: 'https://github.com/JimmyAlter/AssetDesk',
     liveUrl: '',
@@ -80,6 +90,11 @@ export const projects = [
   {
     title: 'CommerceSuite',
     description: 'Enterprise procurement storefront with secure checkout, catalog filtering, and admin-ready order management. Designed for internal purchasing teams.',
+    highlights: [
+      'Product catalog search and filtering',
+      'Authenticated checkout flow and user accounts',
+      'Order tracking designed for admin extension',
+    ],
     image: '/projects/commercesuite-1.png',
     repoUrl: 'https://github.com/JimmyAlter/CommerceSuite',
     liveUrl: '',

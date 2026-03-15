@@ -39,9 +39,9 @@ const ProjectCard = ({ project, index }) => {
       {/* Card content */}
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <span className="hud-chip">featured</span>
+          <span className="hud-chip">{project.featured ? 'selected' : 'project'}</span>
           {project.featured && (
-            <span className="text-xs font-mono text-accent-green">★ featured</span>
+            <span className="text-xs font-mono text-accent-green">★ selected</span>
           )}
         </div>
         {/* Icon + Title */}
@@ -88,16 +88,17 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Preview */}
         {currentShot && (
-          <div className="mb-5 relative rounded-lg border border-border overflow-hidden bg-bg">
+          <div className="mb-5 relative rounded-lg border border-border overflow-hidden bg-bg aspect-[16/10]">
             <img
               src={currentShot}
               alt={`${project.title} preview`}
-              className={`w-full h-40 object-cover transition-opacity duration-500 ease-out ${
+              className={`w-full h-full object-cover transition-opacity duration-500 ease-out ${
                 isFading ? 'opacity-60' : 'opacity-100'
               }`}
               loading="lazy"
             />
             {showNav && (
+              <>
               <div className="absolute inset-0 flex items-center justify-between px-2">
                 <button
                   className="hud-chip bg-bg/80 border-border hover:border-accent-blue/50 hover:text-accent-blue transition-all"
@@ -114,6 +115,10 @@ const ProjectCard = ({ project, index }) => {
                   →
                 </button>
               </div>
+              <div className="absolute bottom-2 right-2 hud-chip bg-bg/80 border-border text-txt-secondary">
+                {activeShot + 1}/{shots.length}
+              </div>
+              </>
             )}
           </div>
         )}
@@ -122,6 +127,20 @@ const ProjectCard = ({ project, index }) => {
         <p className="text-sm text-txt-secondary leading-relaxed mb-5">
           {project.description}
         </p>
+
+        {project.highlights?.length > 0 && (
+          <div className="mb-5 rounded-lg border border-border bg-bg-surface/40 p-4">
+            <p className="text-xs font-mono text-txt-muted uppercase tracking-[0.28em] mb-3">Highlights</p>
+            <ul className="space-y-2 text-sm text-txt-secondary">
+              {project.highlights.slice(0, 3).map((h) => (
+                <li key={h} className="flex items-start gap-2">
+                  <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-accent-green/80 shrink-0" />
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Tech tags */}
         <div className="flex flex-wrap gap-2">

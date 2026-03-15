@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowDown, ChevronRight, Download, Github, Linkedin } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 
 const ProfilePanel = () => (
@@ -14,7 +15,7 @@ const ProfilePanel = () => (
         <p className="game-subtitle text-txt-muted">Profile</p>
         <h3 className="text-2xl font-semibold text-txt-primary">{PERSONAL_INFO.name}</h3>
       </div>
-      <div className="hud-chip">online</div>
+      <div className="hud-chip">{PERSONAL_INFO.available ? 'available' : 'unavailable'}</div>
     </div>
     <div className="space-y-4 text-sm text-txt-secondary">
       <div className="flex items-center justify-between">
@@ -39,6 +40,22 @@ const ProfilePanel = () => (
 );
 
 const Hero = () => {
+  const [hasCvEs, setHasCvEs] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/CV_ES.pdf', { method: 'HEAD' })
+      .then((r) => {
+        if (!cancelled) setHasCvEs(Boolean(r.ok));
+      })
+      .catch(() => {
+        if (!cancelled) setHasCvEs(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section
       id="about"
@@ -53,12 +70,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <p className="game-subtitle text-txt-muted">Main Menu</p>
+              <p className="game-subtitle text-txt-muted">Overview</p>
               <h1 className="game-title text-txt-primary">
                 {PERSONAL_INFO.name.toUpperCase()}
               </h1>
               <p className="mt-3 text-txt-secondary max-w-lg">
-                Full-stack developer focused on monitoring platforms, automation, and clean UI systems.
+                Full-stack developer building monitoring platforms and internal tools with React, Node, and PostgreSQL.
               </p>
             </motion.div>
 
@@ -89,6 +106,47 @@ const Hero = () => {
             <div className="flex items-center gap-3 text-xs text-txt-muted uppercase tracking-[0.3em]">
               <span className="hud-chip">CTRL + K</span>
               <span>Quick Commands</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="/CV_EN.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/60 text-txt-secondary hover:text-txt-primary hover:border-border-hover transition-colors"
+              >
+                <Download size={16} className="text-accent-green" />
+                <span className="font-mono text-xs uppercase tracking-[0.22em]">CV (EN)</span>
+              </a>
+              {hasCvEs && (
+                <a
+                  href="/CV_ES.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/60 text-txt-secondary hover:text-txt-primary hover:border-border-hover transition-colors"
+                >
+                  <Download size={16} className="text-accent-blue" />
+                  <span className="font-mono text-xs uppercase tracking-[0.22em]">CV (ES)</span>
+                </a>
+              )}
+              <a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/40 text-txt-muted hover:text-txt-primary hover:border-border-hover transition-colors"
+              >
+                <Github size={16} />
+                <span className="font-mono text-xs uppercase tracking-[0.22em]">GitHub</span>
+              </a>
+              <a
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/40 text-txt-muted hover:text-txt-primary hover:border-border-hover transition-colors"
+              >
+                <Linkedin size={16} />
+                <span className="font-mono text-xs uppercase tracking-[0.22em]">LinkedIn</span>
+              </a>
             </div>
           </div>
 
