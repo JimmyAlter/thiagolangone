@@ -30,7 +30,7 @@ export default {
       },
       fontFamily: {
         mono: ['"JetBrains Mono"', 'monospace'],
-        sans: ['"Rajdhani"', 'system-ui', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
       },
       animation: {
         'blink': 'blink 1s step-end infinite',

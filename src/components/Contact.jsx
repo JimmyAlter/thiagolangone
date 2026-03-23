@@ -17,29 +17,11 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent('New project inquiry');
+    const subject = encodeURIComponent('Project inquiry');
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
     window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
-  };
-
-  const accentMap = {
-    'accent-green': {
-      bg: 'bg-accent-green/10',
-      text: 'text-accent-green',
-      hover: 'hover:text-accent-green',
-    },
-    'accent-purple': {
-      bg: 'bg-accent-purple/10',
-      text: 'text-accent-purple',
-      hover: 'hover:text-accent-purple',
-    },
-    'accent-blue': {
-      bg: 'bg-accent-blue/10',
-      text: 'text-accent-blue',
-      hover: 'hover:text-accent-blue',
-    },
   };
 
   const contactItems = [
@@ -48,21 +30,18 @@ const Contact = () => {
       label: 'email',
       value: PERSONAL_INFO.email,
       href: `mailto:${PERSONAL_INFO.email}`,
-      color: 'accent-green',
     },
     {
       icon: <Phone size={18} />,
       label: 'phone',
       value: PERSONAL_INFO.phone,
       href: `tel:${PERSONAL_INFO.phone.replace(/\s/g, '')}`,
-      color: 'accent-purple',
     },
     {
       icon: <MapPin size={18} />,
       label: 'location',
       value: PERSONAL_INFO.location,
       href: null,
-      color: 'accent-blue',
     },
   ];
 
@@ -76,7 +55,7 @@ const Contact = () => {
       transition={{ duration: 0.6 }}
     >
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-purple/3 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-blue/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
         {/* Section header */}
@@ -90,12 +69,12 @@ const Contact = () => {
             Contact
           </h2>
           <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            Have a role or project in mind? Send a message and I will get back to you.
+            Want to work together? Send a message and I will get back to you.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Form - Terminal style */}
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -104,15 +83,15 @@ const Contact = () => {
             className="terminal-window menu-panel"
           >
             <div className="flex items-center justify-between px-6 pt-6">
-              <span className="hud-chip">message</span>
-              <span className="text-xs font-mono text-txt-muted uppercase tracking-[0.3em]">email draft</span>
+              <span className="hud-chip">contact</span>
+              <span className="text-xs font-mono text-txt-muted uppercase tracking-[0.26em]">opens email client</span>
             </div>
 
             <form className="p-6 space-y-5" onSubmit={handleSubmit}>
               {/* Name */}
               <div>
-                <label htmlFor="name" className="code-comment block mb-2">
-                  {'// your name'}
+                <label htmlFor="name" className="text-xs font-mono text-txt-muted uppercase tracking-[0.22em] block mb-2">
+                  Name
                 </label>
                 <input
                   type="text"
@@ -122,10 +101,10 @@ const Contact = () => {
                   onChange={handleChange}
                   onFocus={() => setFocused('name')}
                   onBlur={() => setFocused(null)}
-                  placeholder="string"
+                  placeholder="Your name"
                   className={`w-full bg-bg border rounded-lg py-2.5 px-4 font-mono text-sm text-txt-primary placeholder-txt-muted/40 outline-none transition-all duration-300 ${
                     focused === 'name'
-                      ? 'border-accent-green/50 shadow-[0_0_10px_rgba(0,255,136,0.1)]'
+                      ? 'border-accent-blue/45 shadow-[0_0_18px_rgba(96,218,255,0.10)]'
                       : 'border-border hover:border-border-hover'
                   }`}
                 />
@@ -133,8 +112,8 @@ const Contact = () => {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="code-comment block mb-2">
-                  {'// your email'}
+                <label htmlFor="email" className="text-xs font-mono text-txt-muted uppercase tracking-[0.22em] block mb-2">
+                  Email
                 </label>
                 <input
                   type="email"
@@ -144,10 +123,10 @@ const Contact = () => {
                   onChange={handleChange}
                   onFocus={() => setFocused('email')}
                   onBlur={() => setFocused(null)}
-                  placeholder="string"
+                  placeholder="you@example.com"
                   className={`w-full bg-bg border rounded-lg py-2.5 px-4 font-mono text-sm text-txt-primary placeholder-txt-muted/40 outline-none transition-all duration-300 ${
                     focused === 'email'
-                      ? 'border-accent-green/50 shadow-[0_0_10px_rgba(0,255,136,0.1)]'
+                      ? 'border-accent-blue/45 shadow-[0_0_18px_rgba(96,218,255,0.10)]'
                       : 'border-border hover:border-border-hover'
                   }`}
                 />
@@ -155,8 +134,8 @@ const Contact = () => {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="code-comment block mb-2">
-                  {'// your message'}
+                <label htmlFor="message" className="text-xs font-mono text-txt-muted uppercase tracking-[0.22em] block mb-2">
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -166,10 +145,10 @@ const Contact = () => {
                   onChange={handleChange}
                   onFocus={() => setFocused('message')}
                   onBlur={() => setFocused(null)}
-                  placeholder="string"
+                  placeholder="A short note about your project or role"
                   className={`w-full bg-bg border rounded-lg py-2.5 px-4 font-mono text-sm text-txt-primary placeholder-txt-muted/40 outline-none resize-none transition-all duration-300 ${
                     focused === 'message'
-                      ? 'border-accent-green/50 shadow-[0_0_10px_rgba(0,255,136,0.1)]'
+                      ? 'border-accent-blue/45 shadow-[0_0_18px_rgba(96,218,255,0.10)]'
                       : 'border-border hover:border-border-hover'
                   }`}
                 />
@@ -178,11 +157,10 @@ const Contact = () => {
               {/* Submit button */}
               <button
                 type="submit"
-                className="group w-full flex items-center justify-center gap-2 font-mono text-sm border border-accent-green/40 text-accent-green py-3 rounded-lg hover:bg-accent-green/10 hover:border-accent-green/60 transition-all duration-300"
+                className="btn btn-primary w-full"
               >
-                <span className="text-txt-muted group-hover:text-accent-green/70">{'>'}</span>
-                {' '}send_message
-                <Send size={14} className="group-hover:translate-x-1 transition-transform" />
+                <Send size={16} />
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">Send Email</span>
               </button>
             </form>
           </motion.div>
@@ -205,7 +183,7 @@ const Contact = () => {
                 className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-bg-surface hover:border-border-hover transition-all duration-300"
               >
                 <div
-                  className={`p-3 rounded-lg ${accentMap[item.color].bg} ${accentMap[item.color].text}`}
+                  className="p-3 rounded-lg bg-accent-blue/10 text-accent-blue"
                 >
                   {item.icon}
                 </div>
@@ -216,7 +194,7 @@ const Contact = () => {
                   {item.href ? (
                     <a
                       href={item.href}
-                      className={`text-sm text-txt-primary transition-colors truncate block ${accentMap[item.color].hover}`}
+                      className="text-sm text-txt-primary transition-colors truncate block hover:text-accent-blue"
                     >
                       {item.value}
                     </a>
@@ -225,19 +203,14 @@ const Contact = () => {
                   )}
                 </div>
                 {item.href && (
-                  <ArrowRight size={14} className="text-txt-muted group-hover:text-accent-green group-hover:translate-x-1 transition-all" />
+                  <ArrowRight size={14} className="text-txt-muted group-hover:text-accent-blue group-hover:translate-x-1 transition-all" />
                 )}
               </motion.div>
             ))}
 
-            {/* Extra message */}
-            <div className="mt-8 p-5 rounded-xl border border-border bg-bg-surface/50">
-              <p className="font-mono text-xs text-txt-muted leading-relaxed">
-                <span className="text-accent-purple">{'/**'}</span><br />
-                <span className="text-txt-muted">{' * You can also find me on'}</span><br />
-                <span className="text-txt-muted">{' * GitHub and LinkedIn. Always open'}</span><br />
-                <span className="text-txt-muted">{' * to new projects and collaborations.'}</span><br />
-                <span className="text-accent-purple">{' */'}</span>
+            <div className="mt-8 p-5 rounded-xl border border-border bg-bg-surface/35">
+              <p className="text-sm text-txt-secondary leading-relaxed">
+                Prefer DMs? You can reach me on LinkedIn as well.
               </p>
             </div>
           </motion.div>

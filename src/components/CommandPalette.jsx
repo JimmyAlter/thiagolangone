@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Command, Monitor, Moon, Sun, Terminal, Briefcase, Mail, Copy, FileText } from 'lucide-react';
+import { Search, Command, Monitor, Briefcase, Mail, Copy, FileText, Layers } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 
-const CommandPalette = ({ theme, setTheme }) => {
+const CommandPalette = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
@@ -68,27 +68,6 @@ const CommandPalette = ({ theme, setTheme }) => {
 
   const actions = [
     {
-      id: 'theme-default',
-      name: 'Theme: Default',
-      icon: <Terminal size={14} />,
-      keyword: 'theme color default dark',
-      perform: () => setTheme('default'),
-    },
-    {
-      id: 'theme-dracula',
-      name: 'Theme: Dracula',
-      icon: <Moon size={14} />,
-      keyword: 'theme color dracula purple dark',
-      perform: () => setTheme('dracula'),
-    },
-    {
-      id: 'theme-gruvbox',
-      name: 'Theme: Gruvbox',
-      icon: <Sun size={14} />,
-      keyword: 'theme color gruvbox warm retro',
-      perform: () => setTheme('gruvbox'),
-    },
-    {
       id: 'goto-about',
       name: 'Go to About',
       icon: <Monitor size={14} />,
@@ -103,6 +82,20 @@ const CommandPalette = ({ theme, setTheme }) => {
       perform: () => window.location.hash = '#work',
     },
     {
+      id: 'goto-capabilities',
+      name: 'Go to What I Build',
+      icon: <Layers size={14} />,
+      keyword: 'go to what i build capabilities focus services',
+      perform: () => window.location.hash = '#capabilities',
+    },
+    {
+      id: 'goto-stack',
+      name: 'Go to Stack',
+      icon: <Briefcase size={14} />,
+      keyword: 'go to stack skills tools',
+      perform: () => window.location.hash = '#skills',
+    },
+    {
       id: 'goto-contact',
       name: 'Go to Contact',
       icon: <Mail size={14} />,
@@ -115,13 +108,6 @@ const CommandPalette = ({ theme, setTheme }) => {
       icon: <FileText size={14} />,
       keyword: 'cv resume english pdf',
       perform: () => window.open('/CV_EN.pdf', '_blank'),
-    },
-    {
-      id: 'cv-es',
-      name: 'Open CV (ES)',
-      icon: <FileText size={14} />,
-      keyword: 'cv resume spanish espanol pdf',
-      perform: () => window.open('/CV_ES.pdf', '_blank'),
     },
     {
       id: 'copy-email',
@@ -155,14 +141,14 @@ const CommandPalette = ({ theme, setTheme }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.15 }}
-            className="fixed top-[15%] left-1/2 -translate-x-1/2 w-full max-w-lg z-[101] px-4"
+            className="fixed top-6 md:top-[15%] left-1/2 -translate-x-1/2 w-full max-w-lg z-[101] px-4"
             role="dialog"
             aria-modal="true"
             aria-label="Command palette"
           >
             <div
               ref={panelRef}
-              className="menu-panel border border-border shadow-2xl rounded-2xl overflow-hidden flex flex-col"
+              className="menu-panel border border-border shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[80vh]"
             >
               {/* Input */}
               <div className="flex items-center gap-3 px-4 py-3 border-b border-border text-txt-primary">
@@ -186,7 +172,7 @@ const CommandPalette = ({ theme, setTheme }) => {
               </div>
 
               {/* Results */}
-              <div className="max-h-72 overflow-y-auto p-2">
+              <div className="max-h-[60vh] md:max-h-72 overflow-y-auto p-2">
                 {filteredActions.length === 0 ? (
                   <div className="px-4 py-8 text-center text-sm font-mono text-txt-muted">
                     No results found for "{query}"
@@ -198,19 +184,16 @@ const CommandPalette = ({ theme, setTheme }) => {
                         key={action.id}
                         onClick={() => runCommand(action.perform)}
                         className={`flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-left transition-colors font-mono text-sm group ${i === 0 && query
-                            ? 'bg-accent-green/10 text-accent-green'
+                            ? 'bg-accent-blue/10 text-accent-blue'
                             : 'text-txt-secondary hover:bg-bg-surface hover:text-txt-primary'
                           }`}
                       >
                         <div className="flex items-center gap-3">
-                          <span className={`${i === 0 && query ? 'text-accent-green' : 'text-txt-muted group-hover:text-txt-primary'}`}>
+                          <span className={`${i === 0 && query ? 'text-accent-blue' : 'text-txt-muted group-hover:text-txt-primary'}`}>
                             {action.icon}
                           </span>
                           {action.name}
                         </div>
-                        {action.id.startsWith('theme') && theme === action.id.split('-')[1] && (
-                          <span className="text-xs text-accent-green opacity-70">active</span>
-                        )}
                       </button>
                     ))}
                   </div>
@@ -220,7 +203,7 @@ const CommandPalette = ({ theme, setTheme }) => {
               {/* Footer */}
               <div className="px-4 py-2 border-t border-border bg-bg-surface/50 text-[10px] text-txt-muted font-mono flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span>Navigation & Themes</span>
+                  <span>Navigation</span>
                 </div>
                  <div className="flex items-center gap-2">
                    <span className="flex items-center gap-1"><Command size={10} />Ctrl + K</span>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { NAV_LINKS, PERSONAL_INFO } from '../constants';
 
 const Footer = () => {
@@ -9,12 +9,12 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="hud-chip">Profile</span>
-              <span className="menu-title text-txt-primary tracking-[0.3em]">THIAGO</span>
+              <span className="hud-chip">Portfolio</span>
+              <span className="menu-title text-txt-primary">THIAGO</span>
             </div>
             <p className="text-sm text-txt-muted max-w-xs leading-relaxed">
-              Full-stack developer based in Buenos Aires, Argentina. 
-              Building RMM dashboards, automation, and modern web apps.
+              Full-stack developer based in Buenos Aires, Argentina.
+              Monitoring dashboards, internal tools, and APIs.
             </p>
           </div>
 
@@ -33,6 +33,15 @@ const Footer = () => {
                   {link.title}
                 </a>
               ))}
+              <a
+                href="/CV_EN.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-txt-muted hover:text-accent-blue transition-colors inline-flex items-center gap-2"
+              >
+                <FileText size={14} />
+                CV (EN)
+              </a>
             </div>
           </div>
 

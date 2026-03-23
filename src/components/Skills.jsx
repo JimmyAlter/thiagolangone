@@ -1,34 +1,14 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Layout, Server, Wrench } from 'lucide-react';
 import { SKILLS } from '../constants';
 
-const SkillBar = ({ name, level, index, inView }) => {
-  return (
-    <div className="group">
-      <div className="flex items-center justify-between mb-1.5">
-        <span className="text-sm font-mono text-txt-secondary group-hover:text-accent-green transition-colors">
-          {name}
-        </span>
-        <span className="text-xs font-mono text-txt-muted">
-          {level}%
-        </span>
-      </div>
-      <div className="skill-bar">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay: index * 0.08, ease: 'easeOut' }}
-          className="skill-bar-fill"
-          style={{
-            background: `linear-gradient(90deg, #00ff88, #a78bfa)`,
-          }}
-        />
-      </div>
-    </div>
-  );
+const categoryIcon = (category) => {
+  if (category.toLowerCase().includes('front')) return <Layout size={18} className="text-accent-blue" />;
+  if (category.toLowerCase().includes('back')) return <Server size={18} className="text-accent-blue" />;
+  return <Wrench size={18} className="text-accent-blue" />;
 };
 
-const SkillCategory = ({ category, icon, items, categoryIndex, inView }) => {
+const SkillCategory = ({ category, items, categoryIndex }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -40,26 +20,25 @@ const SkillCategory = ({ category, icon, items, categoryIndex, inView }) => {
       {/* Skills content */}
       <div className="p-5">
         <div className="flex items-center justify-between mb-4">
-          <span className="hud-chip">category</span>
+          <span className="hud-chip">stack</span>
           <span className="text-xs font-mono text-txt-muted uppercase tracking-[0.3em]">
             {category}
           </span>
         </div>
         <div className="flex items-center gap-3 mb-5">
-          <span className="text-lg">{icon}</span>
+          {categoryIcon(category)}
           <h3 className="font-sans text-lg font-semibold text-txt-primary">
             {category}
           </h3>
         </div>
-        <div className="space-y-4">
-          {items.map((skill, i) => (
-            <SkillBar
+        <div className="flex flex-wrap gap-2">
+          {items.map((skill) => (
+            <span
               key={skill.name}
-              name={skill.name}
-              level={skill.level}
-              index={i}
-              inView={inView}
-            />
+              className="text-xs font-mono px-2.5 py-1 rounded-md bg-bg-surface border border-border text-txt-muted hover:text-txt-primary hover:border-border-hover transition-colors"
+            >
+              {skill.name}
+            </span>
           ))}
         </div>
       </div>
@@ -68,21 +47,17 @@ const SkillCategory = ({ category, icon, items, categoryIndex, inView }) => {
 };
 
 const Skills = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
     <motion.section
       id="skills"
       className="py-24 px-6 relative section-screen"
-      ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6 }}
     >
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-purple/3 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/4 rounded-full blur-3xl pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative">
         {/* Section header */}
@@ -96,7 +71,7 @@ const Skills = () => {
             Stack
           </h2>
           <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            The tools I use to ship reliable, production-ready systems.
+            A practical stack for shipping, iterating, and maintaining products.
           </p>
         </motion.div>
 
@@ -106,10 +81,8 @@ const Skills = () => {
             <SkillCategory
               key={skillGroup.category}
               category={skillGroup.category}
-              icon={skillGroup.icon}
               items={skillGroup.items}
               categoryIndex={i}
-              inView={inView}
             />
           ))}
         </div>

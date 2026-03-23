@@ -9,6 +9,6 @@
   <rect x="80" y="80" width="1040" height="470" rx="28" fill="#12121b" stroke="#1e293b" />
   <text x="140" y="240" fill="#00ff88" font-family="JetBrains Mono, monospace" font-size="56">Thiago Langone</text>
   <text x="140" y="320" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="28">Full Stack Developer</text>
-  <text x="140" y="390" fill="#94a3b8" font-family="Rajdhani, system-ui, sans-serif" font-size="26">Monitoring platforms, automation, and web apps</text>
+  <text x="140" y="390" fill="#94a3b8" font-family="Space Grotesk, system-ui, sans-serif" font-size="26">Monitoring dashboards, internal tools, and APIs</text>
   <text x="140" y="450" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="18">thiagolangone.vercel.app</text>
 </svg>

@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
   { id: 'about', title: 'About' },
+  { id: 'work', title: 'Projects' },
   { id: 'skills', title: 'Stack' },
-  { id: 'work', title: 'Work' },
   { id: 'contact', title: 'Contact' },
 ];
 
@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   location: 'Buenos Aires, Argentina',
   github: 'https://github.com/JimmyAlter',
   linkedin: 'https://www.linkedin.com/in/thiago-langone-365825229/',
-  bio: 'I build monitoring tools and modern web apps that feel fast, reliable, and easy to use. Based in Buenos Aires, I work mostly with React, Node, and PostgreSQL, and I am always happy to learn whatever the project needs.',
+  bio: 'I build monitoring dashboards and internal tools with clean UX, reliable APIs, and pragmatic automation. I work mostly with React, Node, and PostgreSQL, and I adapt quickly to what a project needs.',
   available: true,
 };
 
@@ -84,7 +84,7 @@ export const projects = [
     repoUrl: 'https://github.com/JimmyAlter/AssetDesk',
     liveUrl: '',
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite', 'JWT'],
-    featured: true,
+    featured: false,
     gallery: ['/projects/assetdesk-1.png', '/projects/assetdesk-2.png'],
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     repoUrl: 'https://github.com/JimmyAlter/CommerceSuite',
     liveUrl: '',
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite', 'JWT'],
-    featured: true,
+    featured: false,
     gallery: ['/projects/commercesuite-1.png', '/projects/commercesuite-2.png'],
   },
 ];

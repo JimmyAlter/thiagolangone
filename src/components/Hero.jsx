@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { ArrowDown, ChevronRight, Download, Github, Linkedin } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 
@@ -12,8 +11,8 @@ const ProfilePanel = () => (
   >
     <div className="flex items-center justify-between mb-6">
       <div>
-        <p className="game-subtitle text-txt-muted">Profile</p>
-        <h3 className="text-2xl font-semibold text-txt-primary">{PERSONAL_INFO.name}</h3>
+        <p className="text-xs font-mono text-txt-muted uppercase tracking-[0.26em]">Profile</p>
+        <h3 className="text-2xl font-semibold text-txt-primary mt-2">{PERSONAL_INFO.name}</h3>
       </div>
       <div className="hud-chip">{PERSONAL_INFO.available ? 'available' : 'unavailable'}</div>
     </div>
@@ -40,29 +39,13 @@ const ProfilePanel = () => (
 );
 
 const Hero = () => {
-  const [hasCvEs, setHasCvEs] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch('/CV_ES.pdf', { method: 'HEAD' })
-      .then((r) => {
-        if (!cancelled) setHasCvEs(Boolean(r.ok));
-      })
-      .catch(() => {
-        if (!cancelled) setHasCvEs(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   return (
     <section
       id="about"
       className="relative min-h-screen flex items-center overflow-hidden game-shell"
     >
-      <div className="absolute inset-0 bg-city-map opacity-70 pointer-events-none" />
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-20 w-full relative">
+      <div className="absolute inset-0 bg-city-map opacity-40 pointer-events-none" />
+      <div className="max-w-6xl mx-auto px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 w-full relative">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="space-y-8 menu-reveal">
             <motion.div
@@ -70,82 +53,54 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <p className="game-subtitle text-txt-muted">Overview</p>
-              <h1 className="game-title text-txt-primary">
-                {PERSONAL_INFO.name.toUpperCase()}
+              <div className="inline-flex items-center gap-2">
+                <span className="hud-chip">full stack developer</span>
+                <span className="hud-chip">react · node · postgres</span>
+              </div>
+
+              <h1 className="game-title text-txt-primary mt-5">
+                {PERSONAL_INFO.name}
               </h1>
-              <p className="mt-3 text-txt-secondary max-w-lg">
-                Full-stack developer building monitoring platforms and internal tools with React, Node, and PostgreSQL.
+
+              <p className="mt-4 text-txt-secondary max-w-xl text-base leading-relaxed">
+                I build monitoring dashboards and internal tools that feel fast, reliable, and easy to operate.
               </p>
             </motion.div>
 
-            <div className="menu-stack">
-              <a href="#work" className="menu-item">
-                <span className="menu-index">01</span>
-                <div className="flex items-center gap-3">
-                  Projects
-                  <ChevronRight size={18} />
-                </div>
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 pt-2">
+              <a href="#work" className="btn btn-primary w-full sm:w-auto">
+                <ChevronRight size={16} />
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">View Projects</span>
               </a>
-              <a href="#skills" className="menu-item">
-                <span className="menu-index">02</span>
-                <div className="flex items-center gap-3">
-                  Stack
-                  <ChevronRight size={18} />
-                </div>
-              </a>
-              <a href="#contact" className="menu-item">
-                <span className="menu-index">03</span>
-                <div className="flex items-center gap-3">
-                  Contact
-                  <ChevronRight size={18} />
-                </div>
-              </a>
-            </div>
 
-            <div className="flex items-center gap-3 text-xs text-txt-muted uppercase tracking-[0.3em]">
-              <span className="hud-chip">CTRL + K</span>
-              <span>Quick Commands</span>
+              <a href="#contact" className="btn w-full sm:w-auto">
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">Contact</span>
+              </a>
+
+              <a href="/CV_EN.pdf" target="_blank" rel="noreferrer" className="btn w-full sm:w-auto">
+                <Download size={16} className="text-accent-blue" />
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">Download CV</span>
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="/CV_EN.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/60 text-txt-secondary hover:text-txt-primary hover:border-border-hover transition-colors"
-              >
-                <Download size={16} className="text-accent-green" />
-                <span className="font-mono text-xs uppercase tracking-[0.22em]">CV (EN)</span>
-              </a>
-              {hasCvEs && (
-                <a
-                  href="/CV_ES.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/60 text-txt-secondary hover:text-txt-primary hover:border-border-hover transition-colors"
-                >
-                  <Download size={16} className="text-accent-blue" />
-                  <span className="font-mono text-xs uppercase tracking-[0.22em]">CV (ES)</span>
-                </a>
-              )}
-              <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/40 text-txt-muted hover:text-txt-primary hover:border-border-hover transition-colors"
+                className="btn btn-ghost"
               >
                 <Github size={16} />
-                <span className="font-mono text-xs uppercase tracking-[0.22em]">GitHub</span>
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">GitHub</span>
               </a>
               <a
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-bg-surface/40 text-txt-muted hover:text-txt-primary hover:border-border-hover transition-colors"
+                className="btn btn-ghost"
               >
                 <Linkedin size={16} />
-                <span className="font-mono text-xs uppercase tracking-[0.22em]">LinkedIn</span>
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">LinkedIn</span>
               </a>
             </div>
           </div>

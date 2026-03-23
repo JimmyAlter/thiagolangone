@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, Menu, X, Command, Search } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, Command, Search, Download } from 'lucide-react';
 import { NAV_LINKS, PERSONAL_INFO } from '../constants';
 
 const Navbar = () => {
@@ -12,6 +12,23 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return undefined;
+
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileOpen]);
 
   return (
     <>
@@ -28,11 +45,11 @@ const Navbar = () => {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#about" className="flex items-center gap-3 shrink-0">
             <span className="hud-chip">profile</span>
-            <span className="menu-title text-txt-primary tracking-[0.3em]">THIAGO</span>
+            <span className="menu-title text-txt-primary">THIAGO</span>
           </a>
 
           {/* Desktop Links & Command Palette */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
             <div className="flex items-center gap-4">
               {NAV_LINKS.map((link, i) => (
                 <a
@@ -41,17 +58,27 @@ const Navbar = () => {
                   className="menu-link"
                 >
                   <span className="text-txt-muted">
-                    {String(i).padStart(2, '0')}.
+                    {String(i + 1).padStart(2, '0')}.
                   </span>
                   {' '}{link.title}
                 </a>
               ))}
             </div>
 
+            <a
+              href="/CV_EN.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
+              <Download size={16} />
+              <span className="font-mono text-xs uppercase tracking-[0.18em]">CV</span>
+            </a>
+
             {/* CMD K Button */}
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-bg-surface hover:border-accent-blue/40 text-txt-muted hover:text-accent-blue transition-all"
+              className="btn btn-ghost"
             >
               <Search size={14} />
               <span className="text-xs font-mono">Cmd</span>
@@ -65,10 +92,10 @@ const Navbar = () => {
           {/* Social + Mobile toggle */}
           <div className="flex items-center gap-4 shrink-0">
             <div className="hidden md:flex items-center gap-4 text-txt-muted">
-              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:text-accent-green transition-colors" aria-label="GitHub">
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:text-accent-blue transition-colors" aria-label="GitHub">
                 <Github size={16} />
               </a>
-              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-purple transition-colors" aria-label="LinkedIn">
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-blue transition-colors" aria-label="LinkedIn">
                 <Linkedin size={16} />
               </a>
             </div>
@@ -101,9 +128,9 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl pt-20 lg:hidden"
+            className="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-xl pt-20 lg:hidden"
           >
-            <div className="flex flex-col items-center gap-6 p-8">
+            <div className="flex flex-col items-center gap-5 p-8">
               {NAV_LINKS.map((link, i) => (
                 <a
                   key={link.id}
@@ -111,15 +138,27 @@ const Navbar = () => {
                   onClick={() => setMobileOpen(false)}
                   className="menu-item w-full max-w-xs"
                 >
-                  <span className="menu-index">{String(i).padStart(2, '0')}</span>
+                  <span className="menu-index">{String(i + 1).padStart(2, '0')}</span>
                   <span>{link.title}</span>
                 </a>
               ))}
+
+              <a
+                href="/CV_EN.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary w-full max-w-xs"
+                onClick={() => setMobileOpen(false)}
+              >
+                <Download size={16} />
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">Download CV</span>
+              </a>
+
               <div className="flex gap-6 mt-8 text-txt-muted">
-                <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:text-accent-green transition-colors">
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hover:text-accent-blue transition-colors">
                   <Github size={20} />
                 </a>
-                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-purple transition-colors">
+                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent-blue transition-colors">
                   <Linkedin size={20} />
                 </a>
                 <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:text-accent-blue transition-colors">
