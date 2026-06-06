@@ -2,3 +2,4 @@ node_modules
 
 # Build output (Vercel/CI generates this)
 dist
+.vercel
