@@ -2,6 +2,8 @@
 
 > **Full Stack Developer & IT Support Specialist** based in Buenos Aires, Argentina.  
 > Specialized in infrastructure automation, server management, security-first web tools, and monitoring systems.
+> 
+> 🔗 **Live Portfolio:** [thiagolangone.vercel.app](https://thiagolangone.vercel.app)
 
 ---
 
@@ -24,7 +26,7 @@
 
 Here are my main projects, designed with a focus on solving real-world IT problems, keeping code modular, and prioritizing user privacy and security:
 
-### 🛡️ [Helper (PWA Token Generator)](https://github.com/JimmyAlter/helper)
+### 🛡️ [Helper (PWA Token Generator)](https://github.com/JimmyAlter/helper) — [Live Demo](https://helper-ten-pi.vercel.app)
 A Progressive Web App (PWA) designed for IT technicians to generate signed RSA-PSS authorization tokens directly on their mobile phones.
 - **100% Offline & Mobile-first:** Service Workers cache all resources so it runs without internet in remote server rooms or data centers.
 - **Local-Only Security:** Uses the native browser **Web Crypto API** to compute signatures locally. Private keys and settings stay securely inside the browser's `localStorage` and are never transmitted over the internet.
@@ -35,7 +37,7 @@ An enterprise-grade asset inventory and service desk ticketing management platfo
 - **Secure Backend API:** Node.js/Express server protected with **Helmet** security headers, **express-rate-limit** to prevent brute force on logins, and strict environment validation that blocks starting in production mode without a secure `JWT_SECRET`.
 - **Ticketing & Inventory:** Role-based access control, ticket priority states, and asset assignment tracking connected to an SQLite DB.
 
-### 📦 [Mi Inventario (IT Equipment & Movs Manager)](https://github.com/JimmyAlter/mi-inventario)
+### 📦 [Mi Inventario (IT Equipment & Movs Manager)](https://github.com/JimmyAlter/mi-inventario) — [Live Demo](https://mi-inventario-nine.vercel.app)
 A lightweight web dashboard for managing computer hardware inventories and logistics transfer tickets.
 - **Modern Modular React:** Developed using **React 19** and **Vite 8**, refactored into a clean subcomponent architecture for maximum maintainability.
 - **XSS Protections:** Strictly sanitizes dynamic data inputs prior to document rendering for ticket printing. Persistent local state with zero database server overhead.
