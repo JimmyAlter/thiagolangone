@@ -91,7 +91,7 @@ const ProjectModal = ({ modal, onClose }) => {
       >
         <div className="absolute inset-0 bg-bg/70 backdrop-blur-sm" onClick={onClose} />
 
-        <div className="fixed inset-0 p-4 md:p-8 flex items-start justify-center">
+        <div className="fixed inset-0 p-3 md:p-8 flex items-start justify-center">
           <motion.div
             initial={{ opacity: 0, y: 16, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -143,7 +143,7 @@ const ProjectModal = ({ modal, onClose }) => {
 
               <div className="overflow-y-auto overscroll-contain max-h-[calc(92vh-64px)]">
                 <div className="grid lg:grid-cols-[1.45fr_0.55fr] gap-0">
-                  <div className="p-4">
+                  <div className="p-3 md:p-4">
                     <div className="relative rounded-xl border border-border bg-bg overflow-hidden aspect-[16/10]">
                       {currentShot && (
                         <img
@@ -209,7 +209,7 @@ const ProjectModal = ({ modal, onClose }) => {
                     )}
                   </div>
 
-                  <div className="p-5 border-t lg:border-t-0 lg:border-l border-border bg-bg-surface/20">
+                  <div className="p-4 md:p-5 border-t lg:border-t-0 lg:border-l border-border bg-bg-surface/20">
                     <p className="text-sm text-txt-secondary leading-relaxed mb-4">{project.description}</p>
 
                     {project.highlights?.length > 0 && (

@@ -7,17 +7,40 @@ export const NAV_LINKS = [
 
 export const PERSONAL_INFO = {
   name: 'Thiago Langone',
-  role: 'Full Stack Developer',
+  role: 'IT Infrastructure & Automation Engineer',
   email: 'thiagoivan029@gmail.com',
   phone: '+54 9 (11) 2844-1081',
   location: 'Buenos Aires, Argentina',
   github: 'https://github.com/JimmyAlter',
   linkedin: 'https://www.linkedin.com/in/thiago-langone-365825229/',
-  bio: 'I build monitoring dashboards and internal tools with clean UX, reliable APIs, and pragmatic automation. I work mostly with React, Node, and PostgreSQL, and I adapt quickly to what a project needs.',
+  bio: 'I look after the infrastructure of a six-company group — 500+ Windows endpoints, six AD domains — and build the tooling that runs it: an in-house RMM, internal MCP servers, and an LLM agent platform where every security-critical action runs as deterministic code. I also build full-stack apps end to end, from React UIs to Node/Postgres APIs.',
   available: true,
 };
 
 export const SKILLS = [
+  {
+    category: 'Infrastructure & Automation',
+    icon: '🖥️',
+    items: [
+      { name: 'Windows Server', level: 90 },
+      { name: 'Active Directory', level: 90 },
+      { name: 'PowerShell', level: 85 },
+      { name: 'Networking', level: 80 },
+      { name: 'Linux', level: 75 },
+      { name: 'Google Workspace Admin', level: 75 },
+    ],
+  },
+  {
+    category: 'AI Engineering',
+    icon: '🤖',
+    items: [
+      { name: 'Multi-agent orchestration', level: 80 },
+      { name: 'MCP servers', level: 80 },
+      { name: 'Gemini API', level: 75 },
+      { name: 'Ollama', level: 70 },
+      { name: 'Prompt & guardrail design', level: 80 },
+    ],
+  },
   {
     category: 'Frontend',
     icon: '🎨',
@@ -73,6 +96,21 @@ export const projects = [
     gallery: ['/projects/systemmonitor-1.png', '/projects/systemmonitor-2.png'],
   },
   {
+    title: 'AI Quest RPG — AI Dungeon Master',
+    description: 'A desktop RPG where an LLM acts as dungeon master, generating story, encounters, and NPC dialogue live, while a deterministic engine underneath handles combat, HP/XP, and inventory. Built to explore how far an LLM can go as a narrative engine without ever letting it touch the actual game rules.',
+    highlights: [
+      'LLM-driven narrative and dialogue via the Gemini API, streamed into a Pygame UI',
+      'Deterministic combat, stats, and inventory — the model narrates, it never adjudicates rules',
+      'Four playable classes with distinct stats and starting kits',
+    ],
+    image: '/projects/ai-quest-rpg.svg',
+    repoUrl: '',
+    liveUrl: '',
+    tech: ['Python', 'Pygame', 'Gemini API', 'Threading/Queue'],
+    featured: true,
+    gallery: ['/projects/ai-quest-rpg.svg'],
+  },
+  {
     title: 'AssetDesk',
     description: 'Enterprise service desk and asset inventory platform with ticket workflows, device health, and team coverage. Designed for IT operations with a clean UI and secure API.',
     highlights: [
@@ -101,5 +139,20 @@ export const projects = [
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite', 'JWT'],
     featured: false,
     gallery: ['/projects/commercesuite-1.png', '/projects/commercesuite-2.png'],
+  },
+  {
+    title: 'NovaSpend',
+    description: 'A mobile expense tracker built with Expo/React Native, paired with a Telegram bot so an expense can be logged from a chat message without opening the app. Data syncs through Firebase so the app and the bot always agree.',
+    highlights: [
+      'Cross-platform app (iOS/Android/web) with Expo Router and native navigation',
+      'Telegram bot for logging expenses via chat, backed by the same Firebase data',
+      'Local-first UX with async storage and haptic feedback',
+    ],
+    image: '/projects/novaspend.svg',
+    repoUrl: '',
+    liveUrl: '',
+    tech: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'Node.js', 'Telegram Bot API'],
+    featured: false,
+    gallery: ['/projects/novaspend.svg'],
   },
 ];

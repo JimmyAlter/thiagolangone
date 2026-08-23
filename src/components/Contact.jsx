@@ -46,13 +46,9 @@ const Contact = () => {
   ];
 
   return (
-    <motion.section
+    <section
       id="contact"
-      className="py-24 px-6 relative section-screen"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.6 }}
+      className="py-12 md:py-24 px-4 md:px-6 relative"
     >
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-blue/4 rounded-full blur-3xl pointer-events-none" />
@@ -63,7 +59,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
             Contact
@@ -73,11 +69,11 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="terminal-window menu-panel"
@@ -167,19 +163,15 @@ const Contact = () => {
 
           {/* Contact info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
             {contactItems.map((item, i) => (
-              <motion.div
+              <div
                 key={item.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                 className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-bg-surface hover:border-border-hover transition-all duration-300"
               >
                 <div
@@ -205,7 +197,7 @@ const Contact = () => {
                 {item.href && (
                   <ArrowRight size={14} className="text-txt-muted group-hover:text-accent-blue group-hover:translate-x-1 transition-all" />
                 )}
-              </motion.div>
+              </div>
             ))}
 
             <div className="mt-8 p-5 rounded-xl border border-border bg-bg-surface/35">
@@ -216,7 +208,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

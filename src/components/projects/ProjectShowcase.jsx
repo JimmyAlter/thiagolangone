@@ -42,7 +42,7 @@ const ProjectShowcase = ({ project, onOpen, reverse = false }) => {
       transition={{ duration: 0.55 }}
       className="group terminal-window menu-panel"
     >
-      <div className="p-7">
+      <div className="p-4 md:p-7">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className={reverse ? 'lg:order-2' : 'lg:order-1'}>
             <ProjectPreview

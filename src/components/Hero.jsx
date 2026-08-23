@@ -45,7 +45,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center overflow-hidden game-shell"
     >
       <div className="absolute inset-0 bg-city-map opacity-40 pointer-events-none" />
-      <div className="max-w-6xl mx-auto px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 w-full relative">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-20 w-full relative">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="space-y-8 menu-reveal">
             <motion.div
@@ -54,8 +54,8 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className="inline-flex items-center gap-2">
-                <span className="hud-chip">full stack developer</span>
-                <span className="hud-chip">react · node · postgres</span>
+                <span className="hud-chip">infrastructure & automation</span>
+                <span className="hud-chip">react · node · ai agents</span>
               </div>
 
               <h1 className="game-title text-txt-primary mt-5">
@@ -63,7 +63,7 @@ const Hero = () => {
               </h1>
 
               <p className="mt-4 text-txt-secondary max-w-xl text-base leading-relaxed">
-                I build monitoring dashboards and internal tools that feel fast, reliable, and easy to operate.
+                I run the infrastructure for a six-company group and build the RMM, automation, and AI agent tooling that sits on top of it.
               </p>
             </motion.div>
 

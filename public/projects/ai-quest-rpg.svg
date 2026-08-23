@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="AI Quest RPG dungeon master preview">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0f" />
+      <stop offset="1" stop-color="#1a1226" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#eab308" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg2)" />
+  <rect x="60" y="60" width="1080" height="600" rx="22" fill="#11111b" stroke="#1e293b" />
+
+  <rect x="60" y="60" width="1080" height="52" rx="22" fill="#161626" />
+  <circle cx="94" cy="86" r="6" fill="#ff5f57" />
+  <circle cx="114" cy="86" r="6" fill="#febc2e" />
+  <circle cx="134" cy="86" r="6" fill="#28c840" />
+  <text x="170" y="92" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="14">~/projects/ai-quest-rpg</text>
+
+  <text x="100" y="170" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="26">AI Quest RPG</text>
+  <text x="100" y="205" fill="#eab308" font-family="JetBrains Mono, monospace" font-size="14">Dungeon Master · Gemini API</text>
+
+  <!-- class picker row -->
+  <rect x="100" y="245" width="230" height="90" rx="12" fill="#151522" stroke="#eab308" stroke-opacity="0.5" />
+  <rect x="345" y="245" width="230" height="90" rx="12" fill="#151522" stroke="#1e293b" />
+  <rect x="590" y="245" width="230" height="90" rx="12" fill="#151522" stroke="#1e293b" />
+  <rect x="835" y="245" width="245" height="90" rx="12" fill="#151522" stroke="#1e293b" />
+  <text x="125" y="280" fill="#eab308" font-family="JetBrains Mono, monospace" font-size="18">⚔ Guerrero</text>
+  <text x="125" y="305" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">HP +5 · Daño +2</text>
+  <text x="370" y="280" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="18">🔮 Mago</text>
+  <text x="370" y="305" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">MP infinito</text>
+  <text x="615" y="280" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="18">🗡 Pícaro</text>
+  <text x="615" y="305" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">Esquiva +3</text>
+  <text x="860" y="280" fill="#60a5fa" font-family="JetBrains Mono, monospace" font-size="18">🛡 Paladín</text>
+  <text x="860" y="305" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">Sanación pasiva</text>
+
+  <!-- HP / XP bars -->
+  <rect x="100" y="370" width="500" height="18" rx="9" fill="#3f0d0d" />
+  <rect x="100" y="370" width="360" height="18" rx="9" fill="#ef4444" />
+  <text x="610" y="384" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12">HP 18/25</text>
+
+  <rect x="100" y="400" width="500" height="14" rx="7" fill="#0d1a3f" />
+  <rect x="100" y="400" width="220" height="14" rx="7" fill="#60a5fa" />
+  <text x="610" y="411" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12">XP 220/500</text>
+
+  <!-- dialogue box -->
+  <rect x="100" y="440" width="980" height="170" rx="16" fill="#12121b" stroke="url(#accent2)" />
+  <text x="130" y="475" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">DUNGEON MASTER</text>
+  <rect x="130" y="495" width="820" height="10" rx="5" fill="#1e293b" />
+  <rect x="130" y="518" width="880" height="10" rx="5" fill="#1e293b" />
+  <rect x="130" y="541" width="620" height="10" rx="5" fill="#1e293b" />
+  <rect x="130" y="572" width="180" height="26" rx="8" fill="#1e1330" stroke="#a78bfa" stroke-opacity="0.5" />
+  <text x="150" y="589" fill="#eab308" font-family="JetBrains Mono, monospace" font-size="12">&gt; atacar con espada</text>
+
+  <text x="100" y="640" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="14">Python + Pygame + Gemini API</text>
+</svg>

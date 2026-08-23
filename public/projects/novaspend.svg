@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="NovaSpend expense tracker preview">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0f" />
+      <stop offset="1" stop-color="#0d1f18" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e" />
+      <stop offset="1" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg3)" />
+  <rect x="60" y="60" width="1080" height="600" rx="22" fill="#11111b" stroke="#1e293b" />
+
+  <rect x="60" y="60" width="1080" height="52" rx="22" fill="#161626" />
+  <circle cx="94" cy="86" r="6" fill="#ff5f57" />
+  <circle cx="114" cy="86" r="6" fill="#febc2e" />
+  <circle cx="134" cy="86" r="6" fill="#28c840" />
+  <text x="170" y="92" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="14">~/projects/novaspend</text>
+
+  <text x="100" y="170" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="26">NovaSpend</text>
+  <text x="100" y="205" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="14">Expo · React Native · Telegram Bot</text>
+
+  <!-- phone mock -->
+  <rect x="100" y="245" width="290" height="330" rx="24" fill="#0d0d14" stroke="#1e293b" stroke-width="2" />
+  <rect x="118" y="270" width="254" height="40" rx="8" fill="#151522" />
+  <text x="134" y="296" fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="13">This month</text>
+  <text x="330" y="296" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="end">-$842</text>
+
+  <rect x="118" y="326" width="254" height="46" rx="10" fill="#151522" />
+  <circle cx="140" cy="349" r="10" fill="#22c55e" fill-opacity="0.25" />
+  <rect x="158" y="341" width="120" height="8" rx="4" fill="#1e293b" />
+  <rect x="158" y="355" width="70" height="7" rx="3.5" fill="#334155" />
+  <text x="352" y="353" fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="end">-$45</text>
+
+  <rect x="118" y="380" width="254" height="46" rx="10" fill="#151522" />
+  <circle cx="140" cy="403" r="10" fill="#38bdf8" fill-opacity="0.25" />
+  <rect x="158" y="395" width="120" height="8" rx="4" fill="#1e293b" />
+  <rect x="158" y="409" width="70" height="7" rx="3.5" fill="#334155" />
+  <text x="352" y="407" fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="end">-$120</text>
+
+  <rect x="118" y="434" width="254" height="46" rx="10" fill="#151522" />
+  <circle cx="140" cy="457" r="10" fill="#eab308" fill-opacity="0.25" />
+  <rect x="158" y="449" width="120" height="8" rx="4" fill="#1e293b" />
+  <rect x="158" y="463" width="70" height="7" rx="3.5" fill="#334155" />
+  <text x="352" y="461" fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="end">-$18</text>
+
+  <rect x="118" y="524" width="254" height="34" rx="17" fill="url(#accent3)" opacity="0.9" />
+  <text x="245" y="546" fill="#0a0a0f" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle" font-weight="700">+ Add expense</text>
+
+  <!-- telegram side panel -->
+  <rect x="430" y="245" width="650" height="330" rx="16" fill="#12121b" stroke="#1e293b" />
+  <text x="460" y="285" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="14">Telegram bot</text>
+
+  <rect x="460" y="310" width="360" height="40" rx="12" fill="#151522" />
+  <text x="480" y="335" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12">/gasto 45 almuerzo</text>
+
+  <rect x="500" y="360" width="380" height="40" rx="12" fill="#0d1f18" stroke="#22c55e" stroke-opacity="0.4" />
+  <text x="520" y="385" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="12">✓ Guardado — Comida $45</text>
+
+  <rect x="460" y="430" width="420" height="12" rx="6" fill="#1e293b" />
+  <rect x="460" y="454" width="340" height="12" rx="6" fill="#1e293b" />
+  <path d="M460 520 L540 500 L620 512 L700 480 L780 495 L860 470" fill="none" stroke="url(#accent3)" stroke-width="3" />
+
+  <text x="100" y="640" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="14">React Native + Expo + Firebase + Node.js</text>
+</svg>

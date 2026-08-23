@@ -4,7 +4,7 @@ import { NAV_LINKS, PERSONAL_INFO } from '../constants';
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-bg-surface/30">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Brand */}
           <div>
