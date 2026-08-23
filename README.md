@@ -1,6 +1,6 @@
 # Thiago Langone — Portfolio 💻📡
 
-> **Full Stack Developer & IT Support Specialist** based in Buenos Aires, Argentina.  
+> **IT Infrastructure & Automation Engineer** based in Buenos Aires, Argentina.
 > Specialized in infrastructure automation, server management, security-first web tools, and monitoring systems.
 > 
 > 🔗 **Live Portfolio:** [thiagolangone.vercel.app](https://thiagolangone.vercel.app)
