@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
+import SectionHeading from './SectionHeading';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -54,20 +55,12 @@ const Contact = () => {
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent-blue/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 md:mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
-            Contact
-          </h2>
-          <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            Want to work together? Send a message and I will get back to you.
-          </p>
-        </motion.div>
+        <SectionHeading
+          index="04"
+          eyebrow="Get in Touch"
+          title="Contact"
+          description="Open to remote roles in infrastructure automation, applied AI, and platform engineering."
+        />
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Form */}
@@ -201,8 +194,14 @@ const Contact = () => {
             ))}
 
             <div className="mt-8 p-5 rounded-xl border border-border bg-bg-surface/35">
+              <p className="text-xs font-mono text-txt-muted uppercase tracking-[0.22em] mb-3 flex items-center gap-2">
+                <span className="status-dot" />
+                Availability
+              </p>
               <p className="text-sm text-txt-secondary leading-relaxed">
-                Prefer DMs? You can reach me on LinkedIn as well.
+                Based in {PERSONAL_INFO.timezone} — {PERSONAL_INFO.overlap}.
+                Open to remote roles in infrastructure automation, applied AI, and internal tooling.
+                You can also reach me on LinkedIn.
               </p>
             </div>
           </motion.div>

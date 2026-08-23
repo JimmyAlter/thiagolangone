@@ -13,8 +13,12 @@ const Footer = () => {
               <span className="menu-title text-txt-primary">THIAGO</span>
             </div>
             <p className="text-sm text-txt-muted max-w-xs leading-relaxed">
-              Full-stack developer based in Buenos Aires, Argentina.
-              Monitoring dashboards, internal tools, and APIs.
+              IT Infrastructure &amp; Automation Engineer based in Buenos Aires, Argentina.
+              RMM tooling, internal platforms, and applied AI.
+            </p>
+            <p className="text-xs font-mono text-txt-muted mt-4 flex items-center gap-2">
+              <span className="status-dot" />
+              Open to remote roles · {PERSONAL_INFO.timezone}
             </p>
           </div>
 

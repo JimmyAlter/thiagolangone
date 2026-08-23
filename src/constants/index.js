@@ -14,8 +14,17 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/JimmyAlter',
   linkedin: 'https://www.linkedin.com/in/thiago-langone-365825229/',
   bio: 'I look after the infrastructure of a six-company group — 500+ Windows endpoints, six AD domains — and build the tooling that runs it: an in-house RMM, internal MCP servers, and an LLM agent platform where every security-critical action runs as deterministic code. I also build full-stack apps end to end, from React UIs to Node/Postgres APIs.',
+  timezone: 'UTC−3',
+  overlap: 'Full day overlap with US Eastern & Central',
   available: true,
 };
+
+export const METRICS = [
+  { value: '6', label: 'companies supported' },
+  { value: '500+', label: 'windows endpoints' },
+  { value: '30+', label: 'branch offices' },
+  { value: '6', label: 'active directory domains' },
+];
 
 export const SKILLS = [
   {

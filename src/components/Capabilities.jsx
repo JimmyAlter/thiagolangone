@@ -1,36 +1,34 @@
 import { motion } from 'framer-motion';
-import { Gauge, Wrench, Server } from 'lucide-react';
+import { Bot, Server, TerminalSquare } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const items = [
   {
-    title: 'Monitoring Dashboards',
-    icon: <Gauge size={18} />,
-    points: [
-      'Inventory, health signals, and status at a glance',
-      'Reports and history for ops visibility',
-    ],
-    accent: 'text-accent-blue',
-    chip: 'monitoring',
-  },
-  {
-    title: 'Internal Tools',
-    icon: <Wrench size={18} />,
-    points: [
-      'Service desk workflows and asset tracking',
-      'Clean UI systems designed for daily use',
-    ],
-    accent: 'text-accent-blue',
-    chip: 'tooling',
-  },
-  {
-    title: 'APIs & Automation',
+    title: 'Infrastructure at Scale',
     icon: <Server size={18} />,
     points: [
-      'Node/Express APIs with auth and role-ready patterns',
-      'Automation across Windows/Linux (PowerShell/Bash)',
+      'Six independent Active Directory domains across 30+ branch offices',
+      'DNS, DHCP, multi-site VPN, MikroTik routing, Windows Server and Linux',
     ],
-    accent: 'text-accent-blue',
-    chip: 'backend',
+    chip: 'infrastructure',
+  },
+  {
+    title: 'Automation & Internal Tooling',
+    icon: <TerminalSquare size={18} />,
+    points: [
+      'In-house RMM: PowerShell agents on 500+ endpoints, Node API, React console',
+      'Account provisioning across Active Directory and Google Workspace',
+    ],
+    chip: 'automation',
+  },
+  {
+    title: 'Applied AI & Agents',
+    icon: <Bot size={18} />,
+    points: [
+      'Multi-agent orchestration with per-agent tool policies and isolated workspaces',
+      'MCP servers exposing Postgres and SQL Server through fixed, parameterized queries',
+    ],
+    chip: 'ai engineering',
   },
 ];
 
@@ -47,19 +45,12 @@ const Capabilities = () => {
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent-blue/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
-            What I Build
-          </h2>
-          <p className="text-txt-secondary mt-3 max-w-xl mx-auto text-sm">
-            Practical systems for teams: dashboards, internal tooling, and secure APIs.
-          </p>
-        </motion.div>
+        <SectionHeading
+          index="01"
+          eyebrow="What I Do"
+          title="Systems, not just screens"
+          description="I operate production infrastructure and build the tooling that runs it — with access rules enforced in code, not left to convention."
+        />
 
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((it, i) => (
@@ -72,17 +63,17 @@ const Capabilities = () => {
               className="terminal-window menu-panel menu-card"
             >
               <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-5">
                   <span className="hud-chip">{it.chip}</span>
-                  <span className={`${it.accent}`}>{it.icon}</span>
+                  <span className="text-accent-blue">{it.icon}</span>
                 </div>
-                <h3 className="text-lg font-sans font-semibold text-txt-primary mb-3">
+                <h3 className="text-lg font-sans font-semibold text-txt-primary mb-4">
                   {it.title}
                 </h3>
-                <ul className="space-y-2 text-sm text-txt-secondary">
+                <ul className="space-y-3 text-sm text-txt-secondary">
                   {it.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-border-hover shrink-0" />
+                    <li key={p} className="flex items-start gap-2.5 leading-relaxed">
+                      <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-accent-blue/70 shrink-0" />
                       <span>{p}</span>
                     </li>
                   ))}

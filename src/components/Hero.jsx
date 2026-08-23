@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, ChevronRight, Download, Github, Linkedin } from 'lucide-react';
-import { PERSONAL_INFO } from '../constants';
+import { ArrowDown, ChevronRight, Clock, Download, Github, Linkedin, MapPin } from 'lucide-react';
+import { METRICS, PERSONAL_INFO } from '../constants';
 
 const ProfilePanel = () => (
   <motion.div
@@ -9,32 +9,41 @@ const ProfilePanel = () => (
     transition={{ duration: 0.8, delay: 0.3 }}
     className="menu-panel rounded-2xl p-6"
   >
-    <div className="flex items-center justify-between mb-6">
-      <div>
+    <div className="flex items-start justify-between gap-4 mb-6">
+      <div className="min-w-0">
         <p className="text-xs font-mono text-txt-muted uppercase tracking-[0.26em]">Profile</p>
-        <h3 className="text-2xl font-semibold text-txt-primary mt-2">{PERSONAL_INFO.name}</h3>
+        <h3 className="text-2xl font-semibold text-txt-primary mt-2 truncate">
+          {PERSONAL_INFO.name}
+        </h3>
+        <p className="text-sm text-accent-blue mt-1">{PERSONAL_INFO.role}</p>
       </div>
-      <div className="hud-chip">{PERSONAL_INFO.available ? 'available' : 'unavailable'}</div>
+      {PERSONAL_INFO.available && (
+        <div className="hud-chip flex items-center gap-2 shrink-0">
+          <span className="status-dot" />
+          <span>open to work</span>
+        </div>
+      )}
     </div>
-    <div className="space-y-4 text-sm text-txt-secondary">
-      <div className="flex items-center justify-between">
-        <span className="text-txt-muted uppercase tracking-[0.3em] text-xs">Role</span>
-        <span className="text-txt-primary font-semibold">{PERSONAL_INFO.role}</span>
+
+    <div className="space-y-3 text-sm">
+      <div className="flex items-center gap-3 text-txt-secondary">
+        <MapPin size={15} className="text-txt-muted shrink-0" />
+        <span>{PERSONAL_INFO.location}</span>
       </div>
-      <div className="flex items-center justify-between">
-        <span className="text-txt-muted uppercase tracking-[0.3em] text-xs">Location</span>
-        <span className="text-txt-primary">{PERSONAL_INFO.location}</span>
-      </div>
-      <div className="flex items-center justify-between">
-        <span className="text-txt-muted uppercase tracking-[0.3em] text-xs">Status</span>
-        <span className="text-accent-green">{PERSONAL_INFO.available ? 'Available' : 'Unavailable'}</span>
+      <div className="flex items-center gap-3 text-txt-secondary">
+        <Clock size={15} className="text-txt-muted shrink-0" />
+        <span>
+          {PERSONAL_INFO.timezone}
+          <span className="text-txt-muted"> · {PERSONAL_INFO.overlap}</span>
+        </span>
       </div>
     </div>
-    <div className="mt-6 border-t border-border pt-5">
-      <p className="text-txt-secondary text-sm leading-relaxed">
-        {PERSONAL_INFO.bio}
-      </p>
-    </div>
+
+    <div className="accent-rule my-5" />
+
+    <p className="text-txt-secondary text-sm leading-relaxed">
+      {PERSONAL_INFO.bio}
+    </p>
   </motion.div>
 );
 
@@ -53,17 +62,18 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="inline-flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="hud-chip">infrastructure & automation</span>
-                <span className="hud-chip">react · node · ai agents</span>
+                <span className="hud-chip">applied ai · agents</span>
               </div>
 
-              <h1 className="game-title text-txt-primary mt-5">
+              <h1 className="game-title mt-5">
                 {PERSONAL_INFO.name}
               </h1>
 
               <p className="mt-4 text-txt-secondary max-w-xl text-base leading-relaxed">
-                I run the infrastructure for a six-company group and build the RMM, automation, and AI agent tooling that sits on top of it.
+                I run the infrastructure for a six-company group and build the RMM,
+                automation, and AI agent tooling that sits on top of it.
               </p>
             </motion.div>
 
@@ -107,6 +117,21 @@ const Hero = () => {
 
           <ProfilePanel />
         </div>
+
+        {/* Scale metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-14 lg:mt-20"
+        >
+          {METRICS.map((metric) => (
+            <div key={metric.label} className="stat-tile">
+              <p className="stat-value">{metric.value}</p>
+              <p className="stat-label mt-2">{metric.label}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -114,7 +139,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden xl:block"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

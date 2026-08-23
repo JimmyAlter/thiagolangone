@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
-import { Layout, Server, Wrench } from 'lucide-react';
+import { Bot, Layout, Server, TerminalSquare, Wrench } from 'lucide-react';
 import { SKILLS } from '../constants';
+import SectionHeading from './SectionHeading';
 
 const categoryIcon = (category) => {
-  if (category.toLowerCase().includes('front')) return <Layout size={18} className="text-accent-blue" />;
-  if (category.toLowerCase().includes('back')) return <Server size={18} className="text-accent-blue" />;
+  const name = category.toLowerCase();
+  if (name.includes('infrastructure')) return <TerminalSquare size={18} className="text-accent-blue" />;
+  if (name.includes('ai')) return <Bot size={18} className="text-accent-blue" />;
+  if (name.includes('front')) return <Layout size={18} className="text-accent-blue" />;
+  if (name.includes('back')) return <Server size={18} className="text-accent-blue" />;
   return <Wrench size={18} className="text-accent-blue" />;
 };
 
@@ -60,20 +64,12 @@ const Skills = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/4 rounded-full blur-3xl pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-txt-primary mt-3">
-            Stack
-          </h2>
-          <p className="text-txt-secondary mt-3 max-w-md mx-auto text-sm">
-            A practical stack for shipping, iterating, and maintaining products.
-          </p>
-        </motion.div>
+        <SectionHeading
+          index="03"
+          eyebrow="Toolkit"
+          title="Stack"
+          description="What I reach for day to day — from domain controllers and PowerShell to React front ends and agent runtimes."
+        />
 
         {/* Skills grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
