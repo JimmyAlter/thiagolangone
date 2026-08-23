@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Mission Control dashboard preview">
+  <defs>
+    <linearGradient id="bgM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0f" />
+      <stop offset="1" stop-color="#141024" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgM)" />
+  <rect x="50" y="50" width="1100" height="650" rx="22" fill="#11111b" stroke="#1e2a40" />
+
+  <rect x="50" y="50" width="1100" height="52" rx="22" fill="#161626" />
+  <circle cx="84" cy="76" r="6" fill="#ff5f57" />
+  <circle cx="104" cy="76" r="6" fill="#febc2e" />
+  <circle cx="124" cy="76" r="6" fill="#28c840" />
+  <text x="160" y="82" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="14">mission-control · agent fleet</text>
+
+  <!-- status row -->
+  <rect x="90" y="132" width="238" height="76" rx="12" fill="#151522" stroke="#1e2a40" />
+  <text x="112" y="160" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2">AGENTS ONLINE</text>
+  <text x="112" y="192" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700">5 / 5</text>
+
+  <rect x="344" y="132" width="238" height="76" rx="12" fill="#151522" stroke="#1e2a40" />
+  <text x="366" y="160" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2">SYNC INTERVAL</text>
+  <text x="366" y="192" fill="#60daff" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700">60 s</text>
+
+  <rect x="598" y="132" width="238" height="76" rx="12" fill="#151522" stroke="#1e2a40" />
+  <text x="620" y="160" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2">GRID</text>
+  <text x="620" y="192" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700">32 px</text>
+
+  <rect x="852" y="132" width="258" height="76" rx="12" fill="#151522" stroke="#1e2a40" />
+  <text x="874" y="160" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2">TESTS</text>
+  <text x="874" y="192" fill="#eab308" font-family="JetBrains Mono, monospace" font-size="26" font-weight="700">19</text>
+
+  <!-- office floor view -->
+  <rect x="90" y="240" width="640" height="400" rx="14" fill="#0d0d14" stroke="#1e2a40" />
+  <text x="112" y="268" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">OFFICE FLOOR VIEW</text>
+
+  <g stroke="#1a2436" stroke-width="1">
+    <line x1="110" y1="284" x2="710" y2="284" /><line x1="110" y1="316" x2="710" y2="316" />
+    <line x1="110" y1="348" x2="710" y2="348" /><line x1="110" y1="380" x2="710" y2="380" />
+    <line x1="110" y1="412" x2="710" y2="412" /><line x1="110" y1="444" x2="710" y2="444" />
+    <line x1="110" y1="476" x2="710" y2="476" /><line x1="110" y1="508" x2="710" y2="508" />
+    <line x1="110" y1="540" x2="710" y2="540" /><line x1="110" y1="572" x2="710" y2="572" />
+    <line x1="110" y1="604" x2="710" y2="604" />
+    <line x1="110" y1="284" x2="110" y2="604" /><line x1="142" y1="284" x2="142" y2="604" />
+    <line x1="174" y1="284" x2="174" y2="604" /><line x1="206" y1="284" x2="206" y2="604" />
+    <line x1="238" y1="284" x2="238" y2="604" /><line x1="270" y1="284" x2="270" y2="604" />
+    <line x1="302" y1="284" x2="302" y2="604" /><line x1="334" y1="284" x2="334" y2="604" />
+    <line x1="366" y1="284" x2="366" y2="604" /><line x1="398" y1="284" x2="398" y2="604" />
+    <line x1="430" y1="284" x2="430" y2="604" /><line x1="462" y1="284" x2="462" y2="604" />
+    <line x1="494" y1="284" x2="494" y2="604" /><line x1="526" y1="284" x2="526" y2="604" />
+    <line x1="558" y1="284" x2="558" y2="604" /><line x1="590" y1="284" x2="590" y2="604" />
+    <line x1="622" y1="284" x2="622" y2="604" /><line x1="654" y1="284" x2="654" y2="604" />
+    <line x1="686" y1="284" x2="686" y2="604" />
+  </g>
+
+  <!-- desks -->
+  <rect x="176" y="350" width="60" height="28" rx="4" fill="#26304a" />
+  <rect x="368" y="350" width="60" height="28" rx="4" fill="#26304a" />
+  <rect x="560" y="350" width="60" height="28" rx="4" fill="#26304a" />
+  <rect x="176" y="510" width="60" height="28" rx="4" fill="#26304a" />
+  <rect x="368" y="510" width="60" height="28" rx="4" fill="#26304a" />
+
+  <!-- agent avatars -->
+  <g>
+    <rect x="196" y="318" width="20" height="26" rx="5" fill="#60daff" />
+    <circle cx="206" cy="312" r="7" fill="#8ee6ff" />
+    <text x="206" y="398" fill="#60daff" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">main</text>
+  </g>
+  <g>
+    <rect x="388" y="318" width="20" height="26" rx="5" fill="#22c55e" />
+    <circle cx="398" cy="312" r="7" fill="#5ee08e" />
+    <text x="398" y="398" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">inventory</text>
+  </g>
+  <g>
+    <rect x="580" y="318" width="20" height="26" rx="5" fill="#eab308" />
+    <circle cx="590" cy="312" r="7" fill="#f5cd4a" />
+    <text x="590" y="398" fill="#eab308" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">reports</text>
+  </g>
+  <g>
+    <rect x="196" y="478" width="20" height="26" rx="5" fill="#a78bfa" />
+    <circle cx="206" cy="472" r="7" fill="#c4b1ff" />
+    <text x="206" y="558" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">users</text>
+  </g>
+  <g>
+    <rect x="388" y="478" width="20" height="26" rx="5" fill="#f97362" />
+    <circle cx="398" cy="472" r="7" fill="#ff9d90" />
+    <text x="398" y="558" fill="#f97362" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">tickets</text>
+  </g>
+
+  <!-- side panel -->
+  <rect x="754" y="240" width="356" height="400" rx="14" fill="#12121b" stroke="#1e2a40" />
+  <text x="776" y="268" fill="#61708a" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">ACTIVITY</text>
+
+  <rect x="776" y="286" width="312" height="46" rx="9" fill="#151522" />
+  <circle cx="796" cy="309" r="5" fill="#22c55e" />
+  <text x="812" y="305" fill="#c9d6ea" font-family="JetBrains Mono, monospace" font-size="11">agent sync complete</text>
+  <text x="812" y="322" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10">synced: 5 · created: 0</text>
+
+  <rect x="776" y="342" width="312" height="46" rx="9" fill="#151522" />
+  <circle cx="796" cy="365" r="5" fill="#60daff" />
+  <text x="812" y="361" fill="#c9d6ea" font-family="JetBrains Mono, monospace" font-size="11">heartbeat</text>
+  <text x="812" y="378" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10">every 5 min</text>
+
+  <rect x="776" y="398" width="312" height="46" rx="9" fill="#151522" />
+  <circle cx="796" cy="421" r="5" fill="#a78bfa" />
+  <text x="812" y="417" fill="#c9d6ea" font-family="JetBrains Mono, monospace" font-size="11">migrations applied</text>
+  <text x="812" y="434" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10">SQLite · WAL</text>
+
+  <rect x="776" y="454" width="312" height="46" rx="9" fill="#151522" />
+  <circle cx="796" cy="477" r="5" fill="#eab308" />
+  <text x="812" y="473" fill="#c9d6ea" font-family="JetBrains Mono, monospace" font-size="11">nightly backup</text>
+  <text x="812" y="490" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10">03:00 · cleanup 04:00</text>
+
+  <text x="776" y="560" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10.5">integer-only zoom</text>
+  <text x="776" y="582" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10.5">fixed 24 × 16 tilemap</text>
+  <text x="776" y="604" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="10.5">standalone production build</text>
+
+  <text x="90" y="672" fill="#46516b" font-family="JetBrains Mono, monospace" font-size="12">Next.js 16 · React · TailwindCSS · SQLite (better-sqlite3)</text>
+</svg>

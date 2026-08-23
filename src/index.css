@@ -394,6 +394,12 @@
     color: rgb(var(--color-txt-secondary));
   }
 
+  .hud-chip-live {
+    border-color: rgb(var(--color-accent-green) / 0.4);
+    background: rgb(var(--color-accent-green) / 0.08);
+    color: rgb(var(--color-accent-green));
+  }
+
   .btn {
     display: inline-flex;
     align-items: center;

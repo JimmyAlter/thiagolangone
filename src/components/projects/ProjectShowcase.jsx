@@ -8,6 +8,8 @@ const ProjectShowcase = ({ project, onOpen, reverse = false }) => {
   const [isFading, setIsFading] = useState(false);
   const shots = project.gallery?.length ? project.gallery : project.image ? [project.image] : [];
   const showNav = shots.length > 1;
+  const isDiagram = Boolean(project.image?.endsWith('.svg'));
+  const isInternal = project.context === 'production' && !project.repoUrl;
 
   const triggerFade = () => {
     setIsFading(true);
@@ -56,13 +58,20 @@ const ProjectShowcase = ({ project, onOpen, reverse = false }) => {
           </div>
 
           <div className={reverse ? 'lg:order-1' : 'lg:order-2'}>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <span className="hud-chip">{project.featured ? 'selected' : 'project'}</span>
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex flex-wrap items-center gap-2">
+                {project.context === 'production' ? (
+                  <span className="hud-chip hud-chip-live flex items-center gap-2">
+                    <span className="status-dot" />
+                    in production
+                  </span>
+                ) : (
+                  <span className="hud-chip">personal project</span>
+                )}
                 <span className="hud-chip">case study</span>
               </div>
               {project.featured && (
-                <span className="text-xs font-mono text-accent-blue">★ selected</span>
+                <span className="text-xs font-mono text-accent-blue shrink-0">★ selected</span>
               )}
             </div>
 
@@ -135,7 +144,9 @@ const ProjectShowcase = ({ project, onOpen, reverse = false }) => {
             <div className="flex flex-wrap items-center gap-3">
               <button type="button" className="btn btn-primary" onClick={openModal}>
                 <Folder size={16} />
-                <span className="font-mono text-xs uppercase tracking-[0.18em]">Open Screenshots</span>
+                <span className="font-mono text-xs uppercase tracking-[0.18em]">
+                  {isDiagram ? 'View Diagram' : 'Open Screenshots'}
+                </span>
               </button>
               {project.repoUrl && (
                 <a href={project.repoUrl} target="_blank" rel="noreferrer" className="btn">
@@ -150,6 +161,12 @@ const ProjectShowcase = ({ project, onOpen, reverse = false }) => {
                 </a>
               )}
             </div>
+
+            {isInternal && (
+              <p className="text-xs font-mono text-txt-muted mt-4 leading-relaxed">
+                Internal system — source is not public. Happy to walk through the architecture.
+              </p>
+            )}
           </div>
         </div>
       </div>

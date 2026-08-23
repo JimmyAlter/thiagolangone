@@ -25,8 +25,9 @@ const items = [
     title: 'Applied AI & Agents',
     icon: <Bot size={18} />,
     points: [
-      'Multi-agent orchestration with per-agent tool policies and isolated workspaces',
+      'Agent platforms on self-hosted local models — company data never leaves the network',
       'MCP servers exposing Postgres and SQL Server through fixed, parameterized queries',
+      'Security-critical paths as deterministic code, not model output',
     ],
     chip: 'ai engineering',
   },
