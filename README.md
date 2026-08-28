@@ -22,6 +22,21 @@
 
 ---
 
+## 📱 Organizador — Offline PWA (`/app`)
+
+A personal organizer that installs onto an iPhone home screen straight from Safari — tasks, lists and notes, all stored on-device.
+
+**Live:** [thiagolangone.vercel.app/app](https://thiagolangone.vercel.app/app/)
+
+- **Install:** Safari → Share → *Add to Home Screen*. Runs full screen with its own icon, no browser chrome.
+- **Offline first:** a service worker (`public/app/sw.js`, scope `/app/`) caches the shell and hashed assets; state lives in `localStorage`, so there is no account, no backend, and no data leaves the phone.
+- **Built for touch:** bottom tab bar and sheets respect the safe areas, 16px inputs avoid iOS focus zoom, and the system font keeps it native and webfont-free.
+- **Your data stays yours:** JSON export/import from Settings for backups.
+
+Icons are generated dependency-free with `python3 scripts/generate-icons.py`.
+
+---
+
 ## 🚀 Featured Projects
 
 Here are my main projects, designed with a focus on solving real-world IT problems, keeping code modular, and prioritizing user privacy and security:

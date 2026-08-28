@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: 8 10 14;
+    --color-bg-surface: 14 18 26;
+    --color-bg-elevated: 20 26 38;
+    --color-bg-hover: 22 30 44;
+    --color-txt-primary: 235 242 255;
+    --color-txt-secondary: 165 180 205;
+    --color-txt-muted: 118 133 158;
+    --color-border: 30 42 64;
+    --color-border-hover: 62 82 118;
+    --color-accent-green: 70 255 180;
+    --color-accent-purple: 167 139 250;
+    --color-accent-blue: 96 218 255;
+
+    color-scheme: dark;
+  }
+
+  html {
+    /* Fill the notch area with the app background instead of white. */
+    background-color: rgb(var(--color-bg));
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    /* System font keeps it native on iOS and avoids a webfont round-trip offline. */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-txt-primary));
+    /* No rubber-band scroll or pull-to-refresh: this should feel like an app. */
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Chrome is not selectable; content still is. */
+  button,
+  nav,
+  h1,
+  h2 {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Anything under 16px makes iOS zoom in when the field gets focus. */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.75rem;
+  }
+
+  input[type='date'] {
+    min-height: 3rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
